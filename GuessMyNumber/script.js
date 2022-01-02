@@ -3,6 +3,7 @@
 let secretNumber = Math.trunc(Math.random() * 20) + 1;
 let score = 20;
 let highscore = 0;
+let backgroundColor = document.querySelector('body').style.backgroundColor = '#222'
 
 console.log(secretNumber);
 
@@ -30,6 +31,11 @@ document.querySelector('.check').addEventListener
                 document.querySelector('.message').textContent = 'You guess was to high';
                 score--;
                 document.querySelector('.score').textContent = score;
+                document.querySelector('body').style.backgroundColor = '#DE1E1E'
+                setTimeout(function(){
+                    document.querySelector('body').style.backgroundColor = backgroundColor;  // Change the color back to the original
+                  }, 1000);
+
             } else {
                 document.querySelector('.message').textContent = 'Game Over!!';
             }
@@ -39,6 +45,10 @@ document.querySelector('.check').addEventListener
                 document.querySelector('.message').textContent = 'You guess was to low'
                 score--;
                 document.querySelector('.score').textContent = score;
+                document.querySelector('body').style.backgroundColor = '#DE1E1E'
+                setTimeout(function(){
+                    document.querySelector('body').style.backgroundColor = backgroundColor;  // Change the color back to the original
+                  }, 1000);
             } else {
                 document.querySelector('.message').textContent = 'Game Over!!';
             }

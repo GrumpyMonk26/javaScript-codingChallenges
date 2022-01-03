@@ -34,7 +34,7 @@ document.querySelector('.check').addEventListener
                 document.querySelector('body').style.backgroundColor = '#DE1E1E'
                 setTimeout(function(){
                     document.querySelector('body').style.backgroundColor = backgroundColor;  // Change the color back to the original
-                  }, 1000);
+                  }, 500);
 
             } else {
                 document.querySelector('.message').textContent = 'Game Over!!';
@@ -48,7 +48,7 @@ document.querySelector('.check').addEventListener
                 document.querySelector('body').style.backgroundColor = '#DE1E1E'
                 setTimeout(function(){
                     document.querySelector('body').style.backgroundColor = backgroundColor;  // Change the color back to the original
-                  }, 1000);
+                  }, 500);
             } else {
                 document.querySelector('.message').textContent = 'Game Over!!';
             }

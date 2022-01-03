@@ -1,9 +1,12 @@
 'use strict';
-
 let secretNumber = Math.trunc(Math.random() * 20) + 1;
 let score = 20;
 let highscore = 0;
-let backgroundColor = document.querySelector('body').style.backgroundColor = '#222'
+let backgroundColor = document.querySelector('body').style.backgroundColor = '#222';
+
+const displayMessage = function(message){
+    document.querySelector('.message').textContent = message;
+}
 
 console.log(secretNumber);
 
@@ -14,10 +17,14 @@ document.querySelector('.check').addEventListener
 
         // when there is no input
         if(!guess){
-            document.querySelector('.message').textContent = 'No Number Selected'
+            displayMessage('No Number Selected')
+            document.querySelector('body').style.backgroundColor = '#DE1E1E'
+                setTimeout(function(){
+                    document.querySelector('body').style.backgroundColor = backgroundColor;  // Change the color back to the original
+                  }, 500); 
         // when guess is equal to the secret number
         } else if( guess === secretNumber ){
-            document.querySelector('.message').textContent = 'You guessed correct'
+            displayMessage('You guessed correct')
             document.querySelector('.number').textContent = secretNumber;
             document.querySelector('body').style.backgroundColor = '#60b347';
             document.querySelector('.number').style.width = '30rem'
@@ -25,32 +32,20 @@ document.querySelector('.check').addEventListener
                 highscore = score;
                 document.querySelector('.highscore').textContent = highscore;
             }
-        // when guess is greater than the secret number
-        } else if( guess > secretNumber) {
-            if( score > 1 ) {
-                document.querySelector('.message').textContent = 'You guess was to high';
-                score--;
-                document.querySelector('.score').textContent = score;
-                document.querySelector('body').style.backgroundColor = '#DE1E1E'
-                setTimeout(function(){
-                    document.querySelector('body').style.backgroundColor = backgroundColor;  // Change the color back to the original
-                  }, 500);
 
-            } else {
-                document.querySelector('.message').textContent = 'Game Over!!';
-            }
-        // when guess is lower than the secret number   
-        } else if (guess < secretNumber) {
+        // when guess is greater than the secret number
+
+        } else if( guess !== secretNumber){
             if( score > 1 ) {
-                document.querySelector('.message').textContent = 'You guess was to low'
+                displayMessage(guess > secretNumber ? 'You guess was to high' : 'You guess was to low');
                 score--;
                 document.querySelector('.score').textContent = score;
                 document.querySelector('body').style.backgroundColor = '#DE1E1E'
                 setTimeout(function(){
                     document.querySelector('body').style.backgroundColor = backgroundColor;  // Change the color back to the original
-                  }, 500);
-            } else {
-                document.querySelector('.message').textContent = 'Game Over!!';
+                  }, 500);    
+        } else {
+                displayMessage('Game Over!!');
             }
         }
     })

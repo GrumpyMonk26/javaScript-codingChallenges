@@ -16,6 +16,7 @@ diceEl.classList.add('hidden');
 
 let currentScore = 0
 
+// roll button
 btnRoll.addEventListener('click', function(){
     const dice = Math.trunc(Math.random() * 6) + 1;
     console.log(dice)

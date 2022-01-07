@@ -28,12 +28,12 @@ calcAge(1973);
 // console.log(job);
 // console.log(year);
 
-var me = 'Jason'
-let job = 'Web Developer'
-const year = 1973
+// var me = 'Jason'
+// let job = 'Web Developer'
+// const year = 1973
 
 //functions
-console.log(addDecl(2, 3));
+// console.log(addDecl(2, 3));
 // console.log(addExpr(2, 3));
 // console.log(addArrow(2, 3));
 
@@ -56,4 +56,30 @@ function deleteShoppingCart(){
     console.log('All products deleted!')
 }
 
-// THIS KEYWORD EXAMPLES
+// PRIMITIVES VS OBJECTS
+let age = 30;
+let oldAge = age;
+age = 31;
+console.log(age);
+console.log(oldAge);
+
+const me = {
+    name: 'Jason',
+    age: 30,
+};
+
+const friend = me;
+friend.age = 27;
+console.log('Friend:', friend);
+console.log('Me', me);
+
+const jessica = {
+    firstName: 'Jessica',
+    lastName: 'Williams',
+    age: 27,
+};
+
+const marriedJessica = jessica;
+marriedJessica.lastName = 'Davis';
+console.log('Before marriage:', jessica );
+console.log('After marriage:', marriedJessica);

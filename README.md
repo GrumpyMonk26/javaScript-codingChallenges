@@ -1,4 +1,4 @@
-# javascript-coding-challenges
+# JavaScript-Coding-Challenges
 
 #### JavaScript is the most popular programming language in the world. It powers the entire modern web. It provides millions of high-paying jobs all over the world.
 

@@ -1,0 +1,50 @@
+body {
+    background-image: url(images/blackjack-background.jpg);
+    background-size: cover;
+}
+
+.container {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.header--title {
+    color: goldenrod;
+    margin-top: 50px;
+    font-size: 5rem;
+}
+
+.header > h2 {
+    font-size: 2rem;
+    color: honeydew;
+}
+
+.button--section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.button--section > button {
+    width: 200px;
+    padding: 10px 0;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: 1.2em;
+    color: ivory;
+    border: none;
+}
+
+.button--section > button:hover {
+    opacity: 0.9;
+}
+
+.btn--play {
+    background-color: red; 
+}
+
+.btn--draw {
+    background-color: rgb(14, 72, 167); 
+}
